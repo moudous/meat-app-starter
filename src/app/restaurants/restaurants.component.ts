@@ -8,13 +8,14 @@ import { RestaurantsService } from './restaurants.service';
 })
 export class RestaurantsComponent implements OnInit {
 
-  restaurants : Restaurant[] = []
+  restaurants : Restaurant[] 
 
   constructor(private restaurantsService: RestaurantsService) { }
 
   //metodo do ciclo de vida - chamado toda vez que o componente for chamado na tela
   ngOnInit() {
-    this.restaurantsService.restaurants().subscribe(restaurants => this.restaurants = restaurants)
+    this.restaurantsService.restaurants()
+      .subscribe(restaurants => this.restaurants = restaurants)
   }
 
 }
